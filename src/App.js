@@ -5,6 +5,8 @@ import './App.css'
 import './global.css'
 import './Sidebar.css'
 
+import Menu from './components/Menu'
+
 function App() {
   const [connection, setConnection] = useState()
 
@@ -24,14 +26,7 @@ function App() {
     <div id="app">
       <aside>
         <strong>API-Scripts</strong>
-        <nav className="menu">
-          <a href="#" className="menu-option">
-            <span>Listar Scripts</span>
-          </a>
-          <a href="#" className="menu-option">
-            <span>Cadastrar Scripts</span>
-          </a>
-        </nav>
+        <Menu  />
       </aside>
       <main>
         {connection}
