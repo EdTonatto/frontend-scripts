@@ -22,14 +22,14 @@ function App() {
     <div id="app">
       <aside>
         <strong>API-Scripts</strong>
-        <div className="menu">
-          <div className="menu-option" onclick="#">
+        <nav className="menu">
+          <a href="#" className="menu-option">
             <span>Listar Scripts</span>
-          </div>
-          <div className="menu-option" onclick="#">
+          </a>
+          <a href="#" className="menu-option">
             <span>Cadastrar Scripts</span>
-          </div>
-        </div>
+          </a>
+        </nav>
       </aside>
     </div>
   );

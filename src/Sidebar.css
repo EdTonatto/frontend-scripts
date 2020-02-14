@@ -14,27 +14,30 @@ aside strong{
     color: #FFF;
 }
 
-div .menu{
+.menu{
     height: auto;
     margin-top: 30px;
 }
 
-div .menu-option span{
+.menu-option span{
     font-size: 20px;
 }
 
-div .menu-option{
+.menu-option{
     padding: 10px 40px;
     border-style: solid;
     border-width: 1px 0px;
     border-color: #707070;
+    display: block;
+    color: #FFF;
+    text-decoration: none;
 }
 
-div .menu-option + .menu-option{
+.menu-option + .menu-option{
     border-top: 0;
 }
 
-div .menu-option:hover{
+.menu-option:hover{
     background-color: #303030;
     cursor: pointer;
 }
