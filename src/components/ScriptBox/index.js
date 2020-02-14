@@ -7,7 +7,7 @@ import ScriptRow from './ScriptRow'
 
 function ScriptBox(){
   const [scripts, setScripts] = useState([])
-  useEffect(() => {
+      useEffect(() => {
         async function loadScripts(){
           const res = await api.get('/scripts')
             

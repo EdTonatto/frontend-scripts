@@ -7,6 +7,8 @@ import './Sidebar.css'
 import './Main.css'
 
 import Menu from './components/Menu'
+import ScriptBox from './components/ScriptBox'
+import ScriptRow from './components/ScriptBox/ScriptRow'
 
 function App() {
   const [connection, setConnection] = useState()
@@ -30,34 +32,7 @@ function App() {
         <Menu  />
       </aside>
       <main>
-        <div className="content-box">
-          <span id="title">Lista de scripts</span>
-          <div className="script-box">
-            <input placeholder="Pesquisar scripts"></input>
-            <table>
-              <tr>
-                <th>Nome script</th>
-                <th>Nome autor</th>
-                <th>Deletar</th>
-              </tr>
-              <tr>
-                <td>Nome script</td>
-                <td>Nome autor</td>
-                <td>X</td>
-              </tr>              
-              <tr>
-                <td>Nome script</td>
-                <td>Nome autor</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td>Nome script</td>
-                <td>Nome autor</td>
-                <td>X</td>
-              </tr>
-            </table>
-          </div>
-        </div>
+        <ScriptBox />
       </main>
     </div>
   );
