@@ -4,6 +4,7 @@ import api from './services/api'
 import './App.css'
 import './global.css'
 import './Sidebar.css'
+import './Main.css'
 
 import Menu from './components/Menu'
 
@@ -29,7 +30,16 @@ function App() {
         <Menu  />
       </aside>
       <main>
-        {connection}
+        <div className="content-box">
+          <span id="title">Lista de scripts</span>
+          <div className="script-box">
+            <input placeholder="Pesquisar scripts"></input>
+            <div className="script">
+              <span>Nome script</span>
+              <span>Nome autor</span>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
