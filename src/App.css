@@ -4,3 +4,18 @@
     flex-direction: row;
     align-items: flex-start;
 }
+
+@media (max-width: 1000px){
+  #app{
+      flex-direction: column;
+  }
+
+  #app main{
+      margin-left: 0;
+      width: 100%;
+  }
+
+  #app aside{
+      width: 100%;
+  }
+}

@@ -13,7 +13,6 @@ html, body, #root, #app{
 
 body{
     background: #E1E1E1;
-    -webkit-font-smoothing: antialiased;
 }
 
 body, input, button{
