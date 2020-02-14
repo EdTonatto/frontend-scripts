@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import './App.css'
 import api from './services/api'
+
+import './App.css'
+import './global.css'
+import './Sidebar.css'
 
 function App() {
   const [connection, setConnection] = useState()
@@ -16,7 +19,19 @@ function App() {
   }, [])
 
   return (
-    <h1>{JSON.stringify(connection)}</h1>
+    <div id="app">
+      <aside>
+        <strong>API-Scripts</strong>
+        <div className="menu">
+          <div className="menu-option" onclick="#">
+            <span>Listar Scripts</span>
+          </div>
+          <div className="menu-option" onclick="#">
+            <span>Cadastrar Scripts</span>
+          </div>
+        </div>
+      </aside>
+    </div>
   );
 }
 
