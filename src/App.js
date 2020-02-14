@@ -12,10 +12,12 @@ function App() {
     async function loadConnection(){
       const res = await api.get('/');
       
-      setConnection(res.data);
+      setConnection(res.data.message);
     }
 
     loadConnection();
+    if(!connection)
+      setConnection("Failed to connect to API-Scripts")
   }, [])
 
   return (
@@ -31,6 +33,9 @@ function App() {
           </a>
         </nav>
       </aside>
+      <main>
+        {connection}
+      </main>
     </div>
   );
 }
