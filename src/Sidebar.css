@@ -8,8 +8,12 @@ aside{
 }
 
 aside strong{
-    padding: 30px 30px;
+    padding: 30px 60px;
     font-size: 34px;
     text-align: left;
     color: #FFF;
+}
+
+aside .title{
+    text-decoration: none;
 }
