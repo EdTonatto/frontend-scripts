@@ -25,6 +25,7 @@ function NewScript(){
                 <input placeholder="Autor do script"></input>
             </div>
             <CodeMirror options={options} onChange={updateCode}/>
+            <button className="teste">Salvar script</button>
         </div>
         </>
     )

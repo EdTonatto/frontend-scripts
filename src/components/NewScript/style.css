@@ -1,6 +1,7 @@
 @import "../../../node_modules/codemirror/lib/codemirror.css";
 
 .code-editor{
+    position: relative;
     margin-top: 28px;
     height: 85vh;
     border: 1px solid black;
@@ -24,8 +25,23 @@
 .input-block input{
     height: 100%;
     width: 45%;
+    border-radius: 20vh;
+    padding: 0 2vw;
+    border-color: #adadad;
+    border-style: outset;
 }
 
 .input-block input + input{
     margin-left: 2%;
+}
+
+.teste{
+    position: absolute;
+    background-color: #434343;
+    color: white;
+    padding: 1vh 1vw;
+    bottom: 2vh;
+    right: 1vw;
+    font-weight: 800;
+    border: solid 2px #272727;
 }
