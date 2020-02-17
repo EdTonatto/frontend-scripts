@@ -6,3 +6,11 @@
     border: 1px solid black;
     background-color: white;
 }
+
+.ReactCodeMirror{
+    height: 100%;
+}
+
+.CodeMirror{
+    height: 100%;
+}
