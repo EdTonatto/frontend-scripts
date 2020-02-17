@@ -10,6 +10,7 @@ import './Main.css'
 
 import Menu from './components/Menu'
 import ScriptBox from './components/ScriptBox'
+import NewScript from './components/NewScript';
 
 function App() {
   const [connection, setConnection] = useState()
@@ -37,6 +38,9 @@ function App() {
           <Switch>
             <Route path='/scripts'>
               <ScriptBox />
+            </Route>
+            <Route path='/new'>
+              <NewScript />
             </Route>
           </Switch>
         </main>

@@ -1,0 +1,8 @@
+@import "../../../node_modules/codemirror/lib/codemirror.css";
+
+.code-editor{
+    margin-top: 28px;
+    height: 85vh;
+    border: 1px solid black;
+    background-color: white;
+}
