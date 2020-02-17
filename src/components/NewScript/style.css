@@ -8,9 +8,24 @@
 }
 
 .ReactCodeMirror{
-    height: 100%;
+    height: 85vh;
 }
 
 .CodeMirror{
+    height: 80.7vh;
+}
+
+.input-block{
+    margin-top: 1vh;
+    text-align: center;
+    height: 3vh;
+}
+
+.input-block input{
     height: 100%;
+    width: 45%;
+}
+
+.input-block input + input{
+    margin-left: 2%;
 }
