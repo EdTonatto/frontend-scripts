@@ -8,6 +8,7 @@ import './Main.css'
 
 import Menu from './components/Menu'
 import ScriptBox from './components/ScriptBox'
+import ScriptRow from './components/ScriptBox/ScriptRow'
 
 function App() {
   const [connection, setConnection] = useState()

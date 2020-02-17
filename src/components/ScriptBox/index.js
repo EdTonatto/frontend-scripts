@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import './style.css'
+import api from '../../services/api'
+import ScriptRow from './ScriptRow'
 
-function ScripBox(){
+
+function ScriptBox(){
+  const [scripts, setScripts] = useState([])
+      useEffect(() => {
+        async function loadScripts(){
+          const res = await api.get('/scripts')
+            
+          setScripts(res.data)
+        }
+    
+        loadScripts()
+      },[]) 
+
     return(
         <div className="content-box">
           <span id="title">Lista de scripts</span>
@@ -13,26 +27,14 @@ function ScripBox(){
                 <th>Nome script</th>
                 <th>Nome autor</th>
                 <th>Deletar</th>
-              </tr>
-              <tr>
-                <td>Nome script</td>
-                <td>Nome autor</td>
-                <td>X</td>
-              </tr>              
-              <tr>
-                <td>Nome script</td>
-                <td>Nome autor</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td>Nome script</td>
-                <td>Nome autor</td>
-                <td>X</td>
-              </tr>
+              </tr>    
+              {scripts.map(script =>(
+                  <ScriptRow script={script}/>
+              ))}        
             </table>
           </div>
         </div>
     )
 }
 
-export default ScripBox
+export default ScriptBox
