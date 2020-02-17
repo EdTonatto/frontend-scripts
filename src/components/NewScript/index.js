@@ -20,6 +20,10 @@ function NewScript(){
         <>
         <span id="title">Cadastro de Scripts</span>
         <div className="code-editor">
+            <div className="input-block">
+                <input placeholder="Nome do script"></input>
+                <input placeholder="Autor do script"></input>
+            </div>
             <CodeMirror options={options} onChange={updateCode}/>
         </div>
         </>
