@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
 import CodeMirror from 'react-codemirror'
 
+import api from '../../services/api'
+
 import './style.css'
 
 function NewScript(){
     require('codemirror/mode/sql/sql')
     const [code, setCode] = useState("")
+    const [name, setName] = useState("")
+    const [author, setAuthor] = useState("")
 
     const options = {
         lineNumbers: true,
@@ -14,6 +18,19 @@ function NewScript(){
 
     function updateCode(newCode){
         setCode(newCode)
+    }    
+
+    async function handleClick(e){
+        e.preventDefault();
+
+        const data = {
+            name,
+            content: code,
+            author
+        }
+
+        const res = await api.post('/scripts', data)
+        alert(JSON.stringify(res))
     }
 
     return(
@@ -21,11 +38,11 @@ function NewScript(){
         <span id="title">Cadastro de Scripts</span>
         <div className="code-editor">
             <div className="input-block">
-                <input placeholder="Nome do script"></input>
-                <input placeholder="Autor do script"></input>
+                <input placeholder="Nome do script" onChange={e => setName(e.target.value)}></input>
+                <input placeholder="Autor do script" onChange={e => setAuthor(e.target.value)}></input>
             </div>
             <CodeMirror options={options} onChange={updateCode}/>
-            <button className="teste">Salvar script</button>
+            <button onClick={handleClick} className="button-register">Salvar script</button>
         </div>
         </>
     )
