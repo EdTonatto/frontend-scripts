@@ -9,10 +9,8 @@ import './style.css'
 function ScriptRow({script}){
     async function handleDeleteClick(e){
         e.preventDefault();
-        alert(script._id)
 
         const res = await api.delete(`/scripts/${script._id}`)
-        
         alert(res.data.message)
     }
 
