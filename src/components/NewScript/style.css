@@ -35,7 +35,7 @@
     margin-left: 2%;
 }
 
-.teste{
+.button-register{
     position: absolute;
     background-color: #434343;
     color: white;
@@ -44,4 +44,9 @@
     right: 1vw;
     font-weight: 800;
     border: solid 2px #272727;
+}
+
+.button-register:hover{
+    background-color: #303030;
+    cursor: pointer;
 }
