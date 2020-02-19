@@ -62,9 +62,14 @@
     border-style: solid;
 }
 .content{
+    position: relative;
     padding-top: 1vh;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+.content .button-register{
+    right: 3vw;
 }
 
 .content .ReactCodeMirror{

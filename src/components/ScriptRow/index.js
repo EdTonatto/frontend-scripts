@@ -15,17 +15,27 @@ function ScriptRow({script, updateList, handleModal, handleSelectScript}){
         updateList()
     }
 
-    function handleOpenModal(e){
-        e.preventDefault()
-        
+    function setSelectedScript(){
         const data = {
             name: script.name,
             content: script.content,
             author: script.author
         }
-
         handleSelectScript(data)
-        handleModal()
+    }
+
+    function openViewMode(e){
+        e.preventDefault()
+
+        setSelectedScript()
+        handleModal(false)
+    }
+
+    function openEditMode(e){
+        e.preventDefault()
+
+        setSelectedScript()
+        handleModal(true)
     }
 
     return(
@@ -33,12 +43,12 @@ function ScriptRow({script, updateList, handleModal, handleSelectScript}){
             <td>{script.name}</td>
             <td>{script.author}</td>
             <td className="option">
-                <button onClick={handleOpenModal}>
+                <button onClick={openViewMode}>
                     <FontAwesomeIcon icon={faEye} />
                 </button>
             </td>              
             <td className="option">
-                <button>
+                <button onClick={openEditMode}>
                     <FontAwesomeIcon icon={faEdit} />
                 </button>
             </td>            
