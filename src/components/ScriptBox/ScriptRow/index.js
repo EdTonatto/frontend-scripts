@@ -6,12 +6,13 @@ import api from '../../../services/api'
 
 import './style.css'
 
-function ScriptRow({script}){
+function ScriptRow({script, updateList}){
     async function handleDeleteClick(e){
         e.preventDefault();
 
         const res = await api.delete(`/scripts/${script._id}`)
         alert(res.data.message)
+        updateList()
     }
 
     return(

@@ -7,15 +7,14 @@ import ScriptRow from './ScriptRow'
 
 function ScriptBox(){
   const [scripts, setScripts] = useState([])
-      useEffect(() => {
-        async function loadScripts(){
-          const res = await api.get('/scripts')
-            
-          setScripts(res.data)
-        }
-    
-        loadScripts()
-      },[]) 
+    async function loadScripts(){
+      const res = await api.get('/scripts')
+        
+      setScripts(res.data)
+    }
+    useEffect(() => {
+      loadScripts()
+    },[]) 
 
     return(
         <div className="content-box">
@@ -29,7 +28,7 @@ function ScriptBox(){
                 <th>Deletar</th>
               </tr>    
               {scripts.map(script =>(
-                  <ScriptRow script={script}/>
+                  <ScriptRow updateList={loadScripts} script={script}/>
               ))}        
             </table>
           </div>
