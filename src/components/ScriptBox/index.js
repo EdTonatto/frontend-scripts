@@ -7,11 +7,16 @@ import ModalScript from '../ModalScript'
 
 function ScriptBox(){
     const [scripts, setScripts] = useState([])
+    const [modalScript, setModalScript] = useState([])
     const [modalState, setModalState] = useState(false)
 
     function handleModalState(){
       setModalState(modalState ? false : true)
-  }
+    }
+
+    function handleSelectModalScript(data){
+      setModalScript(data)
+    }
 
     async function loadScripts(){
       const res = await api.get('/scripts')
@@ -25,7 +30,7 @@ function ScriptBox(){
 
     return(
         <div className="content-box">
-          <ModalScript show={modalState} handleModal={handleModalState}/>
+          <ModalScript script={modalScript} show={modalState} handleModal={handleModalState}/>
           <span id="title">Lista de scripts</span>
           <div className="script-box">
             <input placeholder="Pesquisar scripts"></input>
@@ -38,7 +43,11 @@ function ScriptBox(){
                 <th>Deletar</th>
               </tr>    
               {scripts.map(script =>(
-                  <ScriptRow handleModal={handleModalState} updateList={loadScripts} script={script}/>
+                  <ScriptRow 
+                    handleModal={handleModalState} 
+                    handleSelectScript={handleSelectModalScript}
+                    updateList={loadScripts} 
+                    script={script}/>
               ))}        
             </table>
           </div>

@@ -6,7 +6,7 @@ import api from '../../services/api'
 
 import './style.css'
 
-function ScriptRow({script, updateList, handleModal}){
+function ScriptRow({script, updateList, handleModal, handleSelectScript}){
     async function handleDeleteClick(e){
         e.preventDefault();
 
@@ -15,12 +15,25 @@ function ScriptRow({script, updateList, handleModal}){
         updateList()
     }
 
+    function handleOpenModal(e){
+        e.preventDefault()
+        
+        const data = {
+            name: script.name,
+            content: script.content,
+            author: script.author
+        }
+
+        handleSelectScript(data)
+        handleModal()
+    }
+
     return(
         <tr>
             <td>{script.name}</td>
             <td>{script.author}</td>
             <td className="option">
-                <button onClick={handleModal}>
+                <button onClick={handleOpenModal}>
                     <FontAwesomeIcon icon={faEye} />
                 </button>
             </td>              
