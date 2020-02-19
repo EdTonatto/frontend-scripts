@@ -6,6 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import './style.css'
 
 function ModalScript({show, handleModal, script}){
+    require('codemirror/mode/sql/sql')
     const showHideClassname = show ? "modal display-block" : "modal display-none";
 
     const options = {
