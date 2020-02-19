@@ -25,6 +25,8 @@ function ScriptBox(){
               <tr>
                 <th>Nome script</th>
                 <th>Nome autor</th>
+                <th>Visualizar</th>
+                <th>Editar</th>
                 <th>Deletar</th>
               </tr>    
               {scripts.map(script =>(

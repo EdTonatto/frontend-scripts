@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faStreetView, faEye, faEdit } from '@fortawesome/free-solid-svg-icons'
 
 import api from '../../services/api'
 
@@ -19,6 +19,16 @@ function ScriptRow({script, updateList}){
         <tr>
             <td>{script.name}</td>
             <td>{script.author}</td>
+            <td className="option">
+                <button>
+                    <FontAwesomeIcon icon={faEye} />
+                </button>
+            </td>              
+            <td className="option">
+                <button>
+                    <FontAwesomeIcon icon={faEdit} />
+                </button>
+            </td>            
             <td className="option">
                 <button onClick={handleDeleteClick}>
                     <FontAwesomeIcon icon={faTrashAlt} />
