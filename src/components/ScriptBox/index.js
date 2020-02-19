@@ -8,7 +8,7 @@ import ModalScript from '../ModalScript'
 function ScriptBox(){
     const [scripts, setScripts] = useState([])
     const [modalScript, setModalScript] = useState([])
-    const [modalState, setModalState] = useState(true)
+    const [modalState, setModalState] = useState(false)
     const [modalEditState, setModalEditState] = useState(false)
 
     function handleModalState(isEdit){
@@ -32,7 +32,12 @@ function ScriptBox(){
 
     return(
         <div className="content-box">
-          <ModalScript script={modalScript} show={modalState} isEdit={modalEditState} handleModal={handleModalState}/>
+          <ModalScript 
+            script={modalScript} 
+            show={modalState} 
+            isEdit={modalEditState} 
+            handleModal={handleModalState}
+            updateList={loadScripts} />
           <span id="title">Lista de scripts</span>
           <div className="script-box">
             <input placeholder="Pesquisar scripts"></input>

@@ -17,6 +17,7 @@ function ScriptRow({script, updateList, handleModal, handleSelectScript}){
 
     function setSelectedScript(){
         const data = {
+            _id: script._id,
             name: script.name,
             content: script.content,
             author: script.author
