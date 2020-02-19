@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import './style.css'
 import api from '../../services/api'
-import ScriptRow from './ScriptRow'
+import ScriptRow from '../ScriptRow'
 
 
 function ScriptBox(){
