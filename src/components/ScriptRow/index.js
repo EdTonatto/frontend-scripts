@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faStreetView, faEye, faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faEye, faEdit } from '@fortawesome/free-solid-svg-icons'
 
 import api from '../../services/api'
 
