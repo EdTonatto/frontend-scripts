@@ -56,7 +56,10 @@
     font-size: 1.7vh;
     height: 3vh;
     display: flex;
-    width: 90%;
+    width: 90%;    
+    border-width: 1px;
+    border-color: #434343;
+    border-style: solid;
 }
 .content{
     padding-top: 1vh;
@@ -70,4 +73,7 @@
 
 .content .CodeMirror{
     height: 69vh;
+    border-width: 1px;
+    border-color: #434343;
+    border-style: solid;
 }
