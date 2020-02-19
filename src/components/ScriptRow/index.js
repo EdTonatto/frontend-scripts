@@ -6,7 +6,7 @@ import api from '../../services/api'
 
 import './style.css'
 
-function ScriptRow({script, updateList}){
+function ScriptRow({script, updateList, handleModal}){
     async function handleDeleteClick(e){
         e.preventDefault();
 
@@ -20,7 +20,7 @@ function ScriptRow({script, updateList}){
             <td>{script.name}</td>
             <td>{script.author}</td>
             <td className="option">
-                <button>
+                <button onClick={handleModal}>
                     <FontAwesomeIcon icon={faEye} />
                 </button>
             </td>              

@@ -3,21 +3,29 @@ import React, {useState, useEffect} from 'react'
 import './style.css'
 import api from '../../services/api'
 import ScriptRow from '../ScriptRow'
-
+import ModalScript from '../ModalScript'
 
 function ScriptBox(){
     const [scripts, setScripts] = useState([])
+    const [modalState, setModalState] = useState(false)
+
+    function handleModalState(){
+      setModalState(modalState ? false : true)
+  }
+
     async function loadScripts(){
       const res = await api.get('/scripts')
         
       setScripts(res.data)
     }
+
     useEffect(() => {
       loadScripts()
     },[]) 
 
     return(
         <div className="content-box">
+          <ModalScript show={modalState} handleModal={handleModalState}/>
           <span id="title">Lista de scripts</span>
           <div className="script-box">
             <input placeholder="Pesquisar scripts"></input>
@@ -30,7 +38,7 @@ function ScriptBox(){
                 <th>Deletar</th>
               </tr>    
               {scripts.map(script =>(
-                  <ScriptRow updateList={loadScripts} script={script}/>
+                  <ScriptRow handleModal={handleModalState} updateList={loadScripts} script={script}/>
               ))}        
             </table>
           </div>
