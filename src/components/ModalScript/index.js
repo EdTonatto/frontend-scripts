@@ -1,4 +1,5 @@
 import React from 'react'
+import CodeMirror from 'react-codemirror'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
@@ -6,6 +7,13 @@ import './style.css'
 
 function ModalScript({show, handleModal, script}){
     const showHideClassname = show ? "modal display-block" : "modal display-none";
+
+    const options = {
+        lineNumbers: true,
+        value: script.content,
+        mode: "text/x-mssql",
+        readOnly: true,
+    };
 
     return(
         <div className={showHideClassname}>
@@ -22,7 +30,7 @@ function ModalScript({show, handleModal, script}){
                 </div>
                 <div className="content">
                     <label>Conteudo Script</label>
-                    <input type="text" value={script.content} readonly></input>
+                    <CodeMirror options={options}/>
                 </div>
                 <button className="close-button" onClick={handleModal}>
                     <FontAwesomeIcon icon={faTimes}/>

@@ -1,8 +1,10 @@
+@import "../../../node_modules/codemirror/lib/codemirror.css";
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
 }
@@ -31,4 +33,41 @@
     position: absolute;
     top: 0;
     right: 0;  
+}
+
+.name-author{
+    display: flex;
+    padding-top: 2vh;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%;
+}
+
+.name, .author{
+    width: 50%;
+}
+
+.name-author label, .content label{
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.name-author input{
+    font-size: 1.7vh;
+    height: 3vh;
+    display: flex;
+    width: 90%;
+}
+.content{
+    padding-top: 1vh;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.content .ReactCodeMirror{
+    height: 69.1vh;
+}
+
+.content .CodeMirror{
+    height: 69vh;
 }

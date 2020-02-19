@@ -8,11 +8,11 @@
     background-color: white;
 }
 
-.ReactCodeMirror{
+.code-editor .ReactCodeMirror{
     height: 85vh;
 }
 
-.CodeMirror{
+.code-editor .CodeMirror{
     height: 80.7vh;
 }
 
